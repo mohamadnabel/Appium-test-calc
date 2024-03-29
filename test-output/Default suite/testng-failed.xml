@@ -6,7 +6,7 @@
       <class name="myTestCases.myTestCases">
         <methods>
           <include name="mySetup"/>
-          <include name="pressOnAllNumber"/>
+          <include name="pressOnAllNumber2"/>
         </methods>
       </class> <!-- myTestCases.myTestCases -->
     </classes>

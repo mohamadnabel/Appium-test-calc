@@ -34,7 +34,7 @@ public class myTestCases {
 
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void myTestcases() throws MalformedURLException {
 		// how to cofiger between caps with driver
 
@@ -53,7 +53,7 @@ public class myTestCases {
 
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void pressOnAllNumber() {
 		System.out.println("main test");
 
@@ -65,16 +65,48 @@ public class myTestCases {
 				System.out.println("first if statment");
 
 				String numberText = allNumber.get(i).getText();
+
 				int number = Integer.parseInt(numberText);
-//
-//				if (number % 2 == 0) {
-//					allNumber.get(i).click();
-//				} else {
-//					System.out.println("hello");
-//				}
+
+				if (number % 2 == 0) {
+					allNumber.get(i).click();
+				} else {
+					System.out.println("hello");
+				}
 
 			}
 		}
 	}
 
+	@Test(enabled = true)
+	public void pressOnAllNumber2() {
+
+		System.out.println("main test");
+
+		List<WebElement> allNumber = driver.findElements(By.className("android.widget.ImageButton"));
+
+		for (int i = 0; i < allNumber.size(); i++) {
+			System.out.println("for loop");
+
+			// Check if the element's resource-id contains "digit" before clicking
+
+			if (allNumber.get(i).getAttribute("resource-id").contains("digit")) {
+
+				String allNum = allNumber.get(i).getAttribute("content-desc");
+
+				int number = Integer.parseInt(allNum);
+
+				boolean isNumeric = allNum.matches("\\d+");
+
+				// 'isNumeric' will be false if non-numeric values were accepted
+
+				if (isNumeric == true && number % 2 == 0) {
+
+					allNumber.get(i).click();
+				}
+
+			}
+		}
+
+	}
 }
