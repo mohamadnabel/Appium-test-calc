@@ -5,8 +5,8 @@
     <classes>
       <class name="myTestCases.myTestCases">
         <methods>
-          <include name="myTestcases"/>
           <include name="mySetup"/>
+          <include name="pressOnAllNumber"/>
         </methods>
       </class> <!-- myTestCases.myTestCases -->
     </classes>
